@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\MVC-Expense-Tracker.props" />
+</Project>
