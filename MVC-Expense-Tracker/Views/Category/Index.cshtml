@@ -3,8 +3,20 @@
 @{
     ViewData["Title"] = "Index";
 }
+<div class="row">
+    <div class="col-md-7">yn
+        <ejs-grid id="categories" dataSource="@Model">
+            <e-grid-columns>
+                <e-grid-column headerText="Category" field="Title"></e-grid-column>
+                <e-grid-column headerText="Type" field="Type"></e-grid-column>
+                <e-grid-column headerText="Actions"></e-grid-column>
+            </e-grid-columns>
+        </ejs-grid>
+    </div>
+</div>
 
-<h1>Index</h1>
+
+@*<h1>Index</h1>
 
 <p>
     <a asp-action="Create">Create New</a>
@@ -45,3 +57,4 @@
 }
     </tbody>
 </table>
+*@

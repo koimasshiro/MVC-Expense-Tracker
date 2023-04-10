@@ -48,19 +48,18 @@ namespace MVC_Expense_Tracker.Controllers
         // GET: Category/Create
         public IActionResult Create()
         {
-            return View();
+            return View(new Category());
         }
 
         // POST: Category/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("CategoryId,Title,Icon,Type")] Category category)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(category);
+                    _context.Add(category);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
@@ -84,8 +83,6 @@ namespace MVC_Expense_Tracker.Controllers
         }
 
         // POST: Category/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("CategoryId,Title,Icon,Type")] Category category)
@@ -117,7 +114,7 @@ namespace MVC_Expense_Tracker.Controllers
             }
             return View(category);
         }
-
+       
         // GET: Category/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
