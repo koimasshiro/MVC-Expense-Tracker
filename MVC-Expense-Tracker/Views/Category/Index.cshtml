@@ -1,60 +1,43 @@
 ﻿@model IEnumerable<MVC_Expense_Tracker.Models.Category>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["PageTitle"] = "Categories";
+    ViewData["PageAction"] = "+ New Category";
+    ViewData["PageActionUrl"] = "/Category/Create";
 }
 <div class="row">
-    <div class="col-md-7">yn
-        <ejs-grid id="categories" dataSource="@Model">
+    <div class="col-md-7">
+        <ejs-grid id="categories" dataSource="@Model" gridLines="None" allowSorting="true" allowPaging="true">
+            <e-grid-pagesettings pageSize="10"></e-grid-pagesettings>
             <e-grid-columns>
-                <e-grid-column headerText="Category" field="Title"></e-grid-column>
-                <e-grid-column headerText="Type" field="Type"></e-grid-column>
-                <e-grid-column headerText="Actions"></e-grid-column>
+                <e-grid-column headerText="Category" field="TitleAndIcon"></e-grid-column>
+                <e-grid-column headerText="Type" template="#typeColumn" width="150px"></e-grid-column>
+                <e-grid-column headerText="Actions" template="#actionColumn" width="100px"></e-grid-column>
             </e-grid-columns>
         </ejs-grid>
     </div>
 </div>
 
+<!--Type columns-->
+<script id="typeColumn" type="text/x-template">
+    ${if(Type == "Income")}
+        <span class="badge bg-success">${Type}</span>
+    ${else}
+        <span class="badge bg-danger">${Type}</span>
+    ${/if}
+</script>
 
-@*<h1>Index</h1>
-
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Title)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Icon)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Type)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Title)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Icon)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Type)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.CategoryId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.CategoryId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.CategoryId">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
-*@
+<!--Actions buttons-->
+<script id="actionColumn" type="text/x-template">
+    <div class="d-flex flex-row justify-content-start">
+        <a class="btn btn-sm edit" href="/Category/Edit/${CategoryId}">
+            <i class="fa-solid fa-pen"></i>
+        </a>
+        <form action="/Category/Delete/${CategoryId}" method="post">
+            @Html.AntiForgeryToken()
+            <button type="submit" class="btn btn-sm btn-link edit" onclick="return confirm("Are you sure you want to delete this?")">
+                <i class="fa-solid fa-trash-can fa-lg text-danger"></i>
+             </button>
+        </form>
+    </div>
+</script>

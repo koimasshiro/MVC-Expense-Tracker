@@ -290,3 +290,4 @@ C:\Users\quan\Desktop\MVC-Expense-Tracker\MVC-Expense-Tracker\MVC-Expense-Tracke
 C:\Users\quan\Desktop\MVC-Expense-Tracker\MVC-Expense-Tracker\MVC-Expense-Tracker\bin\Debug\net6.0\Syncfusion.EJ2.dll
 C:\Users\quan\Desktop\MVC-Expense-Tracker\MVC-Expense-Tracker\MVC-Expense-Tracker\bin\Debug\net6.0\Syncfusion.Licensing.dll
 C:\Users\quan\Desktop\MVC-Expense-Tracker\MVC-Expense-Tracker\MVC-Expense-Tracker\obj\Debug\net6.0\MVC-Expense-Tracker.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\quan\Desktop\MVC-Expense-Tracker\MVC-Expense-Tracker\MVC-Expense-Tracker\bin\Debug\net6.0\libman.json
