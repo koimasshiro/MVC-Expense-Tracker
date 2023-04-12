@@ -48,7 +48,8 @@ namespace MVC_Expense_Tracker.Controllers
         // GET: Transaction/Create
         public IActionResult Create()
         {
-            ViewData["CategoryId"] = new SelectList(_context.Categories, "CategoryId", "CategoryId");
+            PopulateCategories();
+
             return View();
         }
 
@@ -64,7 +65,7 @@ namespace MVC_Expense_Tracker.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["CategoryId"] = new SelectList(_context.Categories, "CategoryId", "CategoryId", transaction.CategoryId);
+            PopulateCategories();
             return View(transaction);
         }
 
@@ -81,7 +82,7 @@ namespace MVC_Expense_Tracker.Controllers
             {
                 return NotFound();
             }
-            ViewData["CategoryId"] = new SelectList(_context.Categories, "CategoryId", "CategoryId", transaction.CategoryId);
+            PopulateCategories();
             return View(transaction);
         }
 
@@ -115,7 +116,7 @@ namespace MVC_Expense_Tracker.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["CategoryId"] = new SelectList(_context.Categories, "CategoryId", "CategoryId", transaction.CategoryId);
+            PopulateCategories();
             return View(transaction);
         }
 
@@ -142,5 +143,21 @@ namespace MVC_Expense_Tracker.Controllers
         {
           return (_context.Transactions?.Any(e => e.TransactionId == id)).GetValueOrDefault();
         }
+
+        //populate categories for transactions
+        [NonAction]
+        public void PopulateCategories()
+        {
+            //Fetch all category in the database table and convert to a list
+            var categories = _context.Categories.ToList();
+
+            //create a default first option for dropdown list
+            Category DefaultCategory = new Category() { CategoryId = 0, Title = "Choose a category" };
+            categories.Insert(0, DefaultCategory);
+
+            //save categories to viewbag 
+            ViewBag.Categories = categories;
+        }
+
     }
 }

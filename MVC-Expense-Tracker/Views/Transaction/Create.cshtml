@@ -1,46 +1,41 @@
 ﻿@model MVC_Expense_Tracker.Models.Transaction
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["PageTitle"] = "Create a new transaction";
 }
 
-<h1>Create</h1>
-
-<h4>Transaction</h4>
-<hr />
 <div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="CategoryId" class="control-label"></label>
-                <select asp-for="CategoryId" class ="form-control" asp-items="ViewBag.CategoryId"></select>
-            </div>
-            <div class="form-group">
-                <label asp-for="Amount" class="control-label"></label>
-                <input asp-for="Amount" class="form-control" />
-                <span asp-validation-for="Amount" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Description" class="control-label"></label>
-                <input asp-for="Description" class="form-control" />
-                <span asp-validation-for="Description" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Date" class="control-label"></label>
-                <input asp-for="Date" class="form-control" />
-                <span asp-validation-for="Date" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
-        </form>
+    <div class="col-md-7">
+        <div class="widget p-5">
+            <form asp-action="Create">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="mb-3">
+                    <ejs-datepicker id="date" ejs-for="Date" placeholder="Date" floatLabelType="Always" format="MMM-dd-yy"></ejs-datepicker>
+                    <span asp-validation-for="Date" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <ejs-dropdownlist id="ddl" ejs-for="CategoryId" dataSource="@ViewBag.Categories" 
+                    placeholder="Category" floatLabelType="Always" allowFiltering="true" 
+                    ignoreAccent="true" filterType="Contains" popupHeight="240px">
+                        <e-dropdownlist-fields value="CategoryId" text="TitleAndIcon"></e-dropdownlist-fields>
+                    </ejs-dropdownlist>
+                </div>
+                <div class="mb-3">
+                    <ejs-numerictextbox id="amount" ejs-for="Amount" placeholder="Amount" floatLabelType="Always" min=1 format="c0"></ejs-numerictextbox>
+                    <span asp-validation-for="Amount" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <ejs-textbox id="desc" placeholder="Description" ejs-for="Description" floatLabelType="Always" multiline></ejs-textbox>
+                    <span asp-validation-for="Description" class="text-danger"></span>
+                </div> 
+                <div class="mb-3">
+                    <input type="submit" value="Create" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}

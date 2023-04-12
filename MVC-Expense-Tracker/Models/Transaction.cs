@@ -11,12 +11,30 @@ namespace MVC_Expense_Tracker.Models
 
         //categoryId
         public int CategoryId { get; set; }
-        public Category Category { get; set; }
+
+        //navigation property
+        public Category? Category { get; set; }
         public int Amount { get; set; }
 
         [Column(TypeName = "nvarchar(65)")]
         public string? Description { get; set; }
-        public DateTime Date { get; set; } = DateTime.Now;
+        public DateTime Date { get; set; } = DateTime.UtcNow;
 
+        [NotMapped]
+        public string? CategoryTitleAndIcon {
+            get
+            {
+                return Category == null? "" : Category.TitleAndIcon;
+            }
+        }
+
+        //create a property for differentiating between expense and income by using substraction in amount field
+        [NotMapped]
+        public string? FormatAmount { 
+            get 
+            { 
+                return ((Category == null || Category.Type == "Expense")? "- " : "+ " ) + Amount.ToString("C0");
+            }
+        }
     }
 }
