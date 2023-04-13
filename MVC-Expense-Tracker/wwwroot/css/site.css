@@ -27,6 +27,10 @@ body {
 .e-bigger {
 	font-size: x-large;
 }
+
+.mainContent{
+	margin-left: 290px;
+}
 /*Grid*/
 .e-grid {
 	border: 0;
@@ -134,4 +138,35 @@ body {
 .widget {
 	border-radius: 1rem;
 	background-color: #1a222b;
+}
+
+/*Side bar*/
+#sidebar{
+	background-color: #12161d;
+	border-right: 1px dashed rgba(75, 82, 85, 0.24);
+	padding: 10px 20px;
+}
+
+/*Cards summary*/
+.cardSummary > .dollar {
+	background-color: #222b33;
+	padding: 1rem;
+	border-bottom-left-radius: 1rem;
+	border-top-left-radius: 1rem;
+}
+.cardSummary > .dollar i {
+	font-weight: bold;
+}
+.income > .dollar {
+	color: #65da41;
+}
+.expense > .dollar{
+	color: #ff4e48;
+}
+.balance > .dollar {
+	color: #2aa1ff;
+}
+
+.widget.chart{
+	padding: 5px;
 }
