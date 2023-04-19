@@ -10,66 +10,72 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/MVC_Expense_Tracker.styles.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/font-awesome/css/all.css"/>
+    <link rel="stylesheet" href="~/font-awesome/css/all.css" />
     <script src="https://cdn.syncfusion.com/ej2/21.1.35/dist/ej2.min.js"></script>
 </head>
 <body class="e-bigger">
-    <partial name="_Sidebar" />
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">KudiTrack</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-                    </ul>
+    @if (ViewData["PageTitle"] != "Home Page")
+    {
+        <partial name="_Sidebar" />
+
+        <nav class="navbar sticky-top bg-body-tertiary mynav">
+            <div class="container-fluid px-4 py-2">
+                @if (ViewData["isDashboard"] != null)
+                {
+                    <h2>Dashboard</h2>
+                }
+                <h2> @ViewData["PageTitle"] </h2>
+
+                <div class="d-flex justify-content-between align-items-center">
+                    <div class="search-box">
+                        <button class="btn-search"><i class="fa-solid fa-magnifying-glass"></i></button>
+                        <input type="text" class="input-search" placeholder="Type to Search...">
+                    </div>
+                    <div class="icons">
+                        <i class="fa-solid fa-bell"></i>
+                        <i class="fa-solid fa-user"></i>
+                    </div>
                 </div>
             </div>
         </nav>
-    </header>
-    <div class="mainContent">
-        <div class="container mt-5">
+    }
+    <div class=@(ViewData["PageTitle"] == "Home Page" ? "mainBody" : "mainContent")>
+        <div class="container">
             <div class="row justify-content-center">
-                <div class="@(ViewData["isDashboard"] == null ? "col-md-10" : "col-md-12")">
-                    <main role="main" class="pb-3">
-                        @if (ViewData["isDashboard"] == null)
-                        {
-                           <div class="row">
-                            <div class="col-md-7">
-                                <div class="d-flex flex-column mb-5">
-                                    <div class="d-flex mb-1">
-                                        <div class="flex-grow-1">
-                                            <h3 class="fw-bold">@ViewData["PageTitle"]</h3>
-                                        </div>
-                                        <div>
-                                            @*navigation to create new category*@
-                                            @if(ViewData["PageAction"] != null)
-                                            {
-                                                <a class="btn btn-success" href="@ViewData["PageActionUrl"]">
-                                                    @ViewData["PageAction"]
-                                                </a> 
-                                            }
+                @if (ViewData["PageTitle"] != "Home Page")
+                {
+                    <div class="@(ViewData["isDashboard"] == null ? "col-md-10" : "col-md-12")">
+                        <main role="main" class="pb-3">
+                            @if (ViewData["isDashboard"] == null)
+                            {
+                                <div class="row">
+                                    <div class="col-md-7">
+                                        <div class="d-flex flex-column mb-5">
+                                            <div class="d-flex mb-1">
+                                                <div class="flex-grow-1">
+                                                    <h3 class="fw-bold">@ViewData["PageTitle"]</h3>
+                                                </div>
+                                                <div>
+                                                    @*navigation to create new category*@
+                                                    @if (ViewData["PageAction"] != null)
+                                                    {
+                                                        <a class="btn btn-success" href="@ViewData["PageActionUrl"]">
+                                                            @ViewData["PageAction"]
+                                                        </a>
+                                                    }
+                                                </div>
+                                            </div>
+                                            <ejs-breadcrumb id="breadcrumb" separatorTemplate="@Html.Raw("<span class='fa-solid fa-angle-right'></span")"></ejs-breadcrumb>
                                         </div>
                                     </div>
-                                    <ejs-breadcrumb id="breadcrumb" separatorTemplate="@Html.Raw("<span class='fa-solid fa-angle-right'></span")"></ejs-breadcrumb>
                                 </div>
-                            </div>
-                        </div>
-                        }
-                        @RenderBody()
-                    </main>
-                </div>
+                            }
+                        </main>
+                    </div>
+                }
             </div>
         </div>
+        @RenderBody()
     </div>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>

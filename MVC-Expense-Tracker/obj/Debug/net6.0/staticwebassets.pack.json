@@ -173,6 +173,30 @@
       "PackagePath": "staticwebassets\\font-awesome\\webfonts\\fa-v4compatibility.woff2"
     },
     {
+      "Id": "C:\\Users\\quan\\Desktop\\MVC-Expense-Tracker\\MVC-Expense-Tracker\\MVC-Expense-Tracker\\wwwroot\\images\\3d-business-girl-working-online.png",
+      "PackagePath": "staticwebassets\\images\\3d-business-girl-working-online.png"
+    },
+    {
+      "Id": "C:\\Users\\quan\\Desktop\\MVC-Expense-Tracker\\MVC-Expense-Tracker\\MVC-Expense-Tracker\\wwwroot\\images\\business-management.png",
+      "PackagePath": "staticwebassets\\images\\business-management.png"
+    },
+    {
+      "Id": "C:\\Users\\quan\\Desktop\\MVC-Expense-Tracker\\MVC-Expense-Tracker\\MVC-Expense-Tracker\\wwwroot\\images\\businessman-reading-mobile-presentation.png",
+      "PackagePath": "staticwebassets\\images\\businessman-reading-mobile-presentation.png"
+    },
+    {
+      "Id": "C:\\Users\\quan\\Desktop\\MVC-Expense-Tracker\\MVC-Expense-Tracker\\MVC-Expense-Tracker\\wwwroot\\images\\online-analysis (1).png",
+      "PackagePath": "staticwebassets\\images\\online-analysis (1).png"
+    },
+    {
+      "Id": "C:\\Users\\quan\\Desktop\\MVC-Expense-Tracker\\MVC-Expense-Tracker\\MVC-Expense-Tracker\\wwwroot\\images\\online-analysis (3).png",
+      "PackagePath": "staticwebassets\\images\\online-analysis (3).png"
+    },
+    {
+      "Id": "C:\\Users\\quan\\Desktop\\MVC-Expense-Tracker\\MVC-Expense-Tracker\\MVC-Expense-Tracker\\wwwroot\\images\\wallpaperflare.com_wallpaper (1).jpg",
+      "PackagePath": "staticwebassets\\images\\wallpaperflare.com_wallpaper (1).jpg"
+    },
+    {
       "Id": "C:\\Users\\quan\\Desktop\\MVC-Expense-Tracker\\MVC-Expense-Tracker\\MVC-Expense-Tracker\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },

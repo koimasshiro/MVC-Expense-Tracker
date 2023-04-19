@@ -1,8 +1,180 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["PageTitle"] = "Home Page";
 }
-
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="m-0">
+    <nav class="mynavbar">
+        <div class="d-flex flex-row justify-content-between align-items-center">
+            <div class="d-flex flex-row align-items-center justify-content-center nav-brand">
+                <h4>KudiTrack</h4>
+                <ul class="d-flex flex-row justify-content-between align-items-center">
+                    <li class="nav-items">Home</li>
+                    <li class="nav-items">Features</li>
+                    <li class="nav-items">About Us</li>
+                    <li class="nav-items">Contact</li>
+                </ul>
+            </div>
+            <div class="d-flex justify-content-center align-items-center">
+                <button class="login">Login</button>
+                <button class="button">Sign up</button>
+            </div>
+        </div>
+    </nav>
+    <div class="d-flex flex-row justify-content-between hero">
+        <div class="text-wrap">
+            <h1>Track your <br /> money in the best <br /> possible <span style="color: cyan">way.</span></h1>
+            <p class="sub-text">KudiTack is the app that tracks your finance with it's ever smart features.</p>
+            <button class="button signin">Get started <i class="fa-solid fa-arrow-alt-circle-right"></i></button>
+            <button class="vid-btn"><i class="fa-sharp fa-solid fa-circle-play"></i> Watch video</button>
+        </div>
+        <div class="hero-img">
+            <img src="~/images/3d-business-girl-working-online.png" />
+        </div>
+    </div>
+    <hr style="margin: 30px 50px 0px 50px" />
+    <div>
+        <div class="text-center pt-4 m-0">
+            <h3>What makes us different?</h3>
+            <p class="sub-text txt">our niche is to build app that makes transactions, tracking <br /> and managing your finances easier with suprisngly<br /> cool and workable features.</p>
+        </div>
+        <div class="services">
+            <div class="service-section">
+                <div class="service-item">
+                    <div class="service-icon">
+                        <div>
+                            <span>
+                                <i class="fa-sharp fa-solid fa-shield-check"></i>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="service-txt">
+                        <h4 class="text-center">Security First</h4>
+                        <p class="sub-text">Designed with the latest technologies this ensures robust safety, security and privacy of your data.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="service-section">
+                <div class="service-item">
+                    <div class="service-icon">
+                        <div>
+                            <span><i class="fa-regular fa-shield-check"></i></span>
+                        </div>
+                    </div>
+                    <div class="service-txt">
+                        <h4>User Friendly</h4>
+                        <p class="sub-text">It's user friendly features and design are the reason for the increase of KudiTrack users with latest software.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="service-section">
+                <div class="service-item">
+                    <div class="service-icon">
+                        <div>
+                            <span><i></i></span>
+                        </div>
+                        </div>
+                    <div class="service-txt">
+                        <h4>Multiple Features</h4>
+                        <p class="sub-text">Using KudiTrack is pretty easy, as we have developed this with workable yet easy to use features.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="service-section">
+                <div class="service-item">
+                    <div class="service-icon">
+                        <div>
+                            <span><i class="fa-sharp fa-solid fa-circle-play"></i></span>
+                        </div>
+                        </div>
+                    <div class="service-txt">
+                        <h4>Newest Technology</h4>
+                        <p class="sub-text">Designed and developed with latest software and robust technologies yet easy to use.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="curved-section upper">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 319"><path fill="#1a222b" fill-opacity="1" d="M0,0L48,21.3C96,43,192,85,288,117.3C384,149,480,171,576,154.7C672,139,768,85,864,80C960,75,1056,117,1152,117.3C1248,117,1344,75,1392,53.3L1440,32L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
+    </div>
+    <div class="curved-section">
+        <div class="curved">
+            <img src="~/images/online-analysis (3).png" class="mobile-img" />
+            <div class="p-4 ad-txt1">
+                <h3>Wonderful & effortless way to <br />view your <span style="color: cyan">Transaction</span></h3>
+                <p class="sub-text">Simplify your life by using KudiTrack to take care of your finance <br />in a better way, Say goodbye to the stress of managing <br />your finances and hello to financial freedom. </p>
+            </div>
+        </div>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 319"><path fill="#12161d" fill-opacity="1" d="M0,0L48,21.3C96,43,192,85,288,117.3C384,149,480,171,576,154.7C672,139,768,85,864,80C960,75,1056,117,1152,117.3C1248,117,1344,75,1392,53.3L1440,32L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
+    </div>
+    <div class="ad-section">
+        <div class="ad-txt2">
+            <h3>Keep track of your transactions<br/> easily with KudiTrack</h3>
+            <p class="sub-text">With KudiTrack you be getting details of your weekly transactions in <br /> a detailed manner, so that you can keep a record of your money spent.</p>
+            <button class="button">Read more <i class="fa-solid fa-arrow-alt-circle-right"></i></button>
+        </div>
+        <img src="~/images/business-management.png" class="ad-img2"/>
+    </div>
+    <div class="quote">
+        <blockquote>
+            <p>A budget is telling your money where to go instead of wondering where it went.</p>
+            <cite>- Dave Ramsey</cite>
+        </blockquote>
+    </div>
+    <div class="svg-upper">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 319"><path fill="#1a222b" fill-opacity="1" d="M0,256L120,224C240,192,480,128,720,117.3C960,107,1200,149,1320,170.7L1440,192L1440,320L1320,320C1200,320,960,320,720,320C480,320,240,320,120,320L0,320Z"></path></svg>
+    </div>
+    <div>
+        <div class="newsletter">
+            <div class="pb-3">
+                <h3>Sign Up for our<span style="color: cyan"> Newsletters</span></h3>
+                <p class="sub-text">By entering your email, you will get notified on our <br />latest updates and features.</p>
+            </div>
+            <div class="form">
+                <input type="text" placeholder="Enter your email addresss" class="email" />
+                <button class="notify-btn">Submit</button>
+            </div>
+        </div>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 319"><path fill="#1a222b" fill-opacity="1" d="M0,288L60,282.7C120,277,240,267,360,229.3C480,192,600,128,720,101.3C840,75,960,85,1080,85.3C1200,85,1320,75,1380,69.3L1440,64L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z"></path></svg>
+    </div>
+    <div class="grid-section">
+        <div>
+            <h3>KudiTrack</h3>
+            <p class="sub-text">Better way to track your finance</p>
+            <span class="text socials"><i class="fa-brands fa-facebook"></i></span>
+            <span class="text socials"><i class="fa-brands fa-instagram"></i></span>
+            <span class="text socials"><i class="fa-brands fa-twitter"></i></span>
+            <span class="text socials"><i class="fa-brands fa-youtube"></i></span>
+        </div>
+        <div class="footer-list">
+            <h4>About Product</h4>
+            <ul class="footer-items">
+                <li>Updates</li>
+                <li>Beta test</li>
+                <li>Products</li>
+                <li>Patch</li>
+            </ul>
+        </div>
+        <div class="footer-list"> 
+            <h4>Help</h4>
+            <ul class="footer-items">
+                <li>System status</li>
+                <li>Talk to support</li>
+                <li>Support docs</li>
+                <li>Help center</li>
+            </ul>
+        </div>
+        <div class="footer-list">
+            <h4>Support</h4>
+            <ul class="footer-items">
+                <li>Account information</li>
+                <li>About us</li>
+                <li>Contact us</li>
+            </ul>
+        </div>
+    </div>
+    <hr style="margin: 30px 50px 0px 50px" />
+    <div class="footer-bottom">
+        <p class="sub-text m-0 pt-0 text-center">Made with ❤️ from Ese Lawrence<span style="color: cyan">(codewithKoi).</span></p>
+    </div>
 </div>

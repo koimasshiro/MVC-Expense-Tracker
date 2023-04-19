@@ -1,9 +1,62 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿
 @{
+    //Create a dynamic list for menu items
+    List<Object> menuItems = new List<Object>();
+
+    //Add menu item fpr each pages in application
+    menuItems.Add(new
+    {
+        text = "Dashboard",
+        url = "/Dashboard",
+        iconCss = "fa-sharp fa-solid fa-objects-column"
+    });
+    menuItems.Add(new
+    {
+        text = "Categories",
+        url = "/Category",
+        iconCss = "fa-solid fa-folder-closed",
+    });
+    menuItems.Add(new
+    {
+        text = "Transactions",
+        url = "/Transaction",
+        iconCss = "fa-solid fa-arrow-right-arrow-left"
+    });
+    menuItems.Add(new
+    {
+        text = "Reports",
+        url = "#",
+        iconCss = "fa-solid fa-chart-simple",
+    });
+    menuItems.Add(new
+    {
+        text = "Invoices",
+        url = "#",
+        iconCss = "fa-solid fa-file-invoice",
+    });
+    menuItems.Add(new
+    {
+        text = "Settings",
+        url = "#",
+        iconCss = "fa-solid fa-gear",
+    });
+    menuItems.Add(new
+    {
+        text = "Help",
+        url = "#",
+        iconCss = "fa-solid fa-circle-question",
+    });
 }
 
 <ejs-sidebar id="sidebar" width="250px">
-
+    <e-content-template>
+        <div class="profile">
+            <img class="profile-img" src="~/images/wallpaperflare.com_wallpaper (1).jpg" />
+            <div class="title">
+                <h6 class="m-0">Ese Lawrence</h6>
+                <p><i class="fa-solid fa-face-smile"></i> Set status</p>
+            </div>
+        </div>
+        <ejs-menu id="menu" orientation="Vertical" items="menuItems"></ejs-menu>
+    </e-content-template>
 </ejs-sidebar>

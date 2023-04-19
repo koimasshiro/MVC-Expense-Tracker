@@ -16,6 +16,10 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\quan\Desktop\MVC-Expense-Tracker\MVC-Expense-Tracker\MVC-Expense-Tracker
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/quan/Desktop/MVC-Expense-Tracker/MVC-Expense-Tracker/MVC-Expense-Tracker/Views/AboutUs/AboutUs.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWJvdXRVc1xBYm91dFVzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/quan/Desktop/MVC-Expense-Tracker/MVC-Expense-Tracker/MVC-Expense-Tracker/Views/Category/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcnlcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 

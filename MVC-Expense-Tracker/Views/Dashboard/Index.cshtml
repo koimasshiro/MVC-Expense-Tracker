@@ -54,7 +54,7 @@
     <div class="col-lg-8">
         <div class="widget chart">
             <div class="title p-4">
-                <h4 class="fw-bold">Monthly Reports</h4>
+                <h4 class="fw-bold">Expenses per day</h4>
             </div>
             <ejs-chart id="spline-chart">
                 @*palettes=@(new string[] {})*@
@@ -78,7 +78,7 @@
     <div class="col-md-4">
         <div class="widget chart">
             <div class="title p-4">
-                <h4 class="fw-bold">Total Expenses by category</h4>
+                <h5 class="fw-bold">Total Expenses by category</h5>
             </div>
             <ejs-accumulationchart id="doughnutChart" enableSmartLabels>
                 <e-accumulation-series-collection>
@@ -95,3 +95,33 @@
         </div>
     </div>
 </div>
+<div class="row">
+    <div class="col-md-6">
+        <h5 class="fw-bold">Transaction History</h5>
+        <div class="widget">
+            <div>
+                <ejs-grid id="recent-transaction" dataSource="@ViewBag.RecentTransactions" gridLines="None">
+                    <e-grid-columns>
+                        <e-grid-column headerText="Date" field="Date" width="110px" format="MMM-dd-yy" type="date" textAlign="Center"></e-grid-column>
+                        <e-grid-column headerText="Category" field="CategoryTitleAndIcon" width="200px"></e-grid-column>
+                        <e-grid-column headerText="Amount" field="FormatAmount" width="110px" textAlign="Right"></e-grid-column>
+                    </e-grid-columns>
+                </ejs-grid>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="widget h-100">
+            <div class="d-flex justify-content-center align-items-center h-100">
+                <span><i class="fa-solid fa-plus fa-2xl"></i>Add Content</span>
+            </div>
+        </div>
+    </div>
+</div>
+@*<script id="amount" type="text/x-template">
+    ${if(Type == "Income")}
+        <span style="color: green"><i class="fa-solid fa-arrow-up-right"></i>${Amount}</span>
+    ${else}
+        <span style="color: red"><i class="fa-solid fa-arrow-up-right"></i>${Amount}</span>
+    ${/if}
+</script>*@
